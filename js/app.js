@@ -80,16 +80,16 @@ Player.prototype.render = function() {
 
 Player.prototype.handleInput = function(keyCode) {
     if (keyCode == 'left') {
-        player.x -= player.speed - 50.5;
+        this.x -= this.speed - 50.5;
     }
     if (keyCode == 'up') {
-        player.y -= player.speed - 18;
+        this.y -= this.speed - 18;
     }
     if (keyCode == 'right') {
-        player.x += player.speed - 50.5;
+        this.x += this.speed - 50.5;
     }
     if (keyCode == 'down') {
-        player.y += player.speed - 18;
+        this.y += this.speed - 18;
     }
 };
 
