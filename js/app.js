@@ -37,7 +37,7 @@ Enemy.prototype.update = function(dt) {
       allEnemies[i] = enemy;
     }
 
-    checkCollision(this);
+    this.checkCollision();
 };
 
 // Draw the enemy on the screen, required method for game
@@ -93,19 +93,19 @@ Player.prototype.handleInput = function(keyCode) {
     }
 };
 
-var checkCollision = function(anEnemy) {
+Enemy.prototype.checkCollision = function() {
     // check for collision between enemy and player
-  if (player.x - 31 < anEnemy.x + 50.5 && player.x + 31 > anEnemy.x + 50.5 &&
-		  player.y + 50 > anEnemy.y + 40 && player.y - 33 < anEnemy.y + 40) {
+  if (player.x - 31 < this.x + 50.5 && player.x + 31 > this.x + 50.5 &&
+		  player.y + 50 > this.y + 40 && player.y - 33 < this.y + 40) {
       // Return to start.
       player.x = 202;
       player.y = 407;
-  } else if (player.x - 31 < anEnemy.x - 50.5 && player.x + 31 > anEnemy.x - 50.5 &&
-		  player.y + 50 > anEnemy.y + 40 && player.y - 33 < anEnemy.y + 40) {
+  } else if (player.x - 31 < this.x - 50.5 && player.x + 31 > this.x - 50.5 &&
+		  player.y + 50 > this.y + 40 && player.y - 33 < this.y + 40) {
       // Return to start.
       player.x = 202;
       player.y = 407;
-  } else if (player.x == anEnemy.x &&	player.y + 50 > anEnemy.y + 40 && player.y - 33 < anEnemy.y + 40) {
+  } else if (player.x == this.x &&	player.y + 50 > this.y + 40 && player.y - 33 < this.y + 40) {
       // Return to start.
       player.x = 202;
       player.y = 407;
